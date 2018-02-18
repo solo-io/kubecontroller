@@ -130,9 +130,9 @@
 
 [[projects]]
   branch = "master"
-  name = "github.com/solo-io/glue"
+  name = "github.com/solo-io/gloo"
   packages = ["pkg/log"]
-  revision = "bd6216cdff5463a990df851cc7bbe1abc8f0d882"
+  revision = "74d520eb19c409b1115b384724cd89a63b42305f"
 
 [[projects]]
   name = "github.com/spf13/pflag"
@@ -336,6 +336,6 @@
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "9973388a8fbd6b80518b22a1da8681afb73899c63485a4398fba6a50b76506ea"
+  inputs-digest = "7934e207b77489e28d24cc0a2ea248b7bc555259deea975929d0f9809db04585"
   solver-name = "gps-cdcl"
   solver-version = 1
