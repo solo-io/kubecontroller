@@ -94,7 +94,10 @@ func (c *Controller) enqueueSync(t eventType, old, new interface{}) {
 		runtime.HandleError(err)
 		return
 	}
-	log.Debugf("[%s] EVENT: %s: %s", c.name, e.eventType, key)
+	// TODO: create multiple verbosity levels
+	if false {
+		log.Debugf("[%s] EVENT: %s: %s", c.name, e.eventType, key)
+	}
 	c.workqueue.AddRateLimited(e)
 }
 
