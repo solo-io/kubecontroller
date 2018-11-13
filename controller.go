@@ -2,6 +2,7 @@ package kubecontroller
 
 import (
 	"fmt"
+	"github.com/solo-io/solo-kit/pkg/utils/log"
 	"time"
 
 	corev1 "k8s.io/api/core/v1"
@@ -13,8 +14,6 @@ import (
 	"k8s.io/client-go/tools/cache"
 	"k8s.io/client-go/tools/record"
 	"k8s.io/client-go/util/workqueue"
-
-	"github.com/solo-io/gloo/pkg/log"
 )
 
 type Controller struct {
