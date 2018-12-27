@@ -38,6 +38,7 @@ type Controller struct {
 	handler cache.ResourceEventHandler
 }
 
+// Deprecated: moved into solo-kit
 // NewController returns a new controller
 func NewController(
 	controllerName string,
