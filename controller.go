@@ -49,16 +49,15 @@ func NewController(
 	eventBroadcaster.StartLogging(log.Printf)
 	eventBroadcaster.StartRecordingToSink(&typedcorev1.EventSinkImpl{Interface: kubeclient.CoreV1().Events("")})
 	recorder := eventBroadcaster.NewRecorder(scheme.Scheme, corev1.EventSource{Component: controllerName})
-	var hasSyncedFuncs []cache.InformerSynced
 
 	c := &Controller{
-		syncFuncs: hasSyncedFuncs,
 		name:      controllerName,
 		workqueue: workqueue.NewNamedRateLimitingQueue(workqueue.DefaultControllerRateLimiter(), controllerName),
 		recorder:  recorder,
 		handler:   handler,
 	}
 
+	var hasSyncedFuncs []cache.InformerSynced
 	for _, informer := range informers {
 		hasSyncedFuncs = append(hasSyncedFuncs, informer.HasSynced)
 
@@ -75,6 +74,7 @@ func NewController(
 			},
 		})
 	}
+	c.syncFuncs = hasSyncedFuncs
 
 	return c
 }
