@@ -5,6 +5,7 @@ import (
 	"sync"
 )
 
+// Deprecated: moved into solo-kit
 // returns a handler that runs f() every time an update occurs,
 // regardless of which type of update
 func NewSyncHandler(f func()) cache.ResourceEventHandler {
@@ -21,6 +22,7 @@ func NewSyncHandler(f func()) cache.ResourceEventHandler {
 	}
 }
 
+// Deprecated: moved into solo-kit
 // returns a handler that runs f() every time an update occurs,
 // regardless of which type of update
 // ensures only one f() can run at a time
